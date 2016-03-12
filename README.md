@@ -13,7 +13,6 @@ This is basically a copy-paste from the EF7 Identity 3.0 RC1 provider but edited
 - Remove everything EF7 related, this means: `EntityFramework.Commands`, `EntityFramework.MicrosoftSqlServer`, `EntityFramework.InMemory` and `Microsoft.AspNet.Identity.EntityFramework`. And instead add the following: `EntityFramework` and `MR.AspNet.Identity.EntityFramework6`.
 - Replace all EF7 namespaces with their EF6 counterparts.
 
-
 ## `MR.AspNet.Identity.EntityFramework6` [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity.EntityFramework6.svg)](https://www.nuget.org/packages/MR.AspNet.Identity.EntityFramework6)
 
 The port of `Microsoft.AspNet.Identity.EntityFramework` to work under EF6.
@@ -22,7 +21,11 @@ The port of `Microsoft.AspNet.Identity.EntityFramework` to work under EF6.
 
 Contains in memory implementations of `IUserStore` and `IRoleStore` to be used in unit tests.
 
-**Note:** This has a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
+## `MR.AspNet.Identity2.EntityFramework6.InMemory` [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity2.EntityFramework6.InMemory.svg)](https://www.nuget.org/packages/MR.AspNet.Identity2.EntityFramework6.InMemory)
+
+Contains in memory implementations of `IUserStore` and `IRoleStore` for identity 2 to be used in unit tests.
+
+**Note:** In memory stores have a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
 
 ## Do you need ef6 migrations enabled for your Asp.Net Core app?
 
