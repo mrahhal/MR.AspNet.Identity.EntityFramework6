@@ -20,6 +20,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{30CB62A8-0
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MR.AspNet.Identity.EntityFramework6.InMemory", "src\MR.AspNet.Identity.EntityFramework6.InMemory\MR.AspNet.Identity.EntityFramework6.InMemory.xproj", "{69E3E089-D77C-49F7-8FC3-4E7908E249D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C5F42168-4469-4F0A-9E0E-E86A5D220857}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Basic", "samples\Basic\Basic.xproj", "{8ED4E3FB-4F08-437E-8D7C-890BE315F899}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Basic.Tests", "samples\Basic.Tests\Basic.Tests.xproj", "{650A5A85-5956-491E-9312-5E25A27D1108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +40,14 @@ Global
 		{69E3E089-D77C-49F7-8FC3-4E7908E249D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69E3E089-D77C-49F7-8FC3-4E7908E249D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69E3E089-D77C-49F7-8FC3-4E7908E249D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED4E3FB-4F08-437E-8D7C-890BE315F899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED4E3FB-4F08-437E-8D7C-890BE315F899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED4E3FB-4F08-437E-8D7C-890BE315F899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED4E3FB-4F08-437E-8D7C-890BE315F899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{650A5A85-5956-491E-9312-5E25A27D1108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650A5A85-5956-491E-9312-5E25A27D1108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{650A5A85-5956-491E-9312-5E25A27D1108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650A5A85-5956-491E-9312-5E25A27D1108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +55,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DD224495-5E7D-42B7-B10D-02D1C511B797} = {0670E6AF-F20A-41C5-A0D6-B882911A6B57}
 		{69E3E089-D77C-49F7-8FC3-4E7908E249D5} = {0670E6AF-F20A-41C5-A0D6-B882911A6B57}
+		{8ED4E3FB-4F08-437E-8D7C-890BE315F899} = {C5F42168-4469-4F0A-9E0E-E86A5D220857}
+		{650A5A85-5956-491E-9312-5E25A27D1108} = {C5F42168-4469-4F0A-9E0E-E86A5D220857}
 	EndGlobalSection
 EndGlobal
