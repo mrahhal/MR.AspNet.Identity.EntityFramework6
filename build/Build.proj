@@ -19,6 +19,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<Assemblies Include="MR.AspNet.Identity.EntityFramework6" />
+		<Assemblies Include="MR.AspNet.Identity.EntityFramework6.InMemory" />
 		<!--<TestAssemblies Include="MR.AspNet.Identity.EntityFramework6.Tests" />-->
 	</ItemGroup>
 	<Import Project="Build.tasks" />

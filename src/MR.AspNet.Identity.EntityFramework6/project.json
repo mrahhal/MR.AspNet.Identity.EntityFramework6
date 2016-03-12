@@ -1,8 +1,8 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "EntityFramework 6 provider for Identity 3.0 RC1",
   "authors": [ "Mohammad Rahhal" ],
-  "tags": [ "aspnetcore", "aspnet5", "identity" ],
+  "tags": [ "aspnetcore", "aspnet", "identity" ],
   "projectUrl": "https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6",
   "licenseUrl": "https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/blob/master/LICENSE.txt",
 
