@@ -27,6 +27,6 @@ Contains in memory implementations of `IUserStore` and `IRoleStore` for identity
 
 **Note:** In memory stores have a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
 
-## Do you need ef6 migrations enabled for your Asp.Net Core app?
+## EF6 migrations for Asp.Net Core?
 
 Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
