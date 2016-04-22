@@ -25,7 +25,7 @@ Contains in memory implementations of `IUserStore` and `IRoleStore` to be used i
 
 Contains in memory implementations of `IUserStore` and `IRoleStore` for identity 2 to be used in unit tests.
 
-**Note:** In memory stores have a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
+**Note:** In memory stores have a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
 
 ## EF6 migrations for Asp.Net Core?
 
