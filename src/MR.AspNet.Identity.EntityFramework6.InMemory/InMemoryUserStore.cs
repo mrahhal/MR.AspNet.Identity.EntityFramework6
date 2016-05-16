@@ -126,7 +126,7 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 
 		public Task<IList<Claim>> GetClaimsAsync(TUser user, CancellationToken cancellationToken)
 		{
-			var list = user.Claims.Select(u => new Claim(u.ClaimType, u.ClaimValue)) as IList<Claim>;
+			var list = user.Claims.Select(u => new Claim(u.ClaimType, u.ClaimValue)).ToList() as IList<Claim>;
 			return Task.FromResult(list);
 		}
 
