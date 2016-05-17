@@ -11,10 +11,6 @@
     "MR.AspNet.Identity.EntityFramework6.InMemory": "*"
   },
 
-  "commands": {
-    "web": "Microsoft.AspNetCoreServer.Kestrel"
-  },
-
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
       "version": "1.0.0-preview1-final",
