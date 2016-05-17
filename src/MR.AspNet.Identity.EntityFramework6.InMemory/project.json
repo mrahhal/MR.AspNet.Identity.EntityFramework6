@@ -11,7 +11,7 @@
 
   "dependencies": {
     "MR.AspNet.Identity.EntityFramework6": "*",
-    "MR.Patterns.Repository": "1.0.0"
+    "MR.Patterns.Repository": "1.2.0"
   },
 
   "frameworks": {

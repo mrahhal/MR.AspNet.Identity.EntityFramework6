@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<Major>1</Major>
 		<Minor>3</Minor>
-		<Patch>0</Patch>
+		<Patch>1</Patch>
 		<Quality></Quality> <!-- the quality should be 6 characters long max (imposed by nuget) -->
 
 		<Version>$(Major).$(Minor).$(Patch)</Version>
