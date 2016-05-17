@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using System.Data.Entity.Infrastructure;
 
 namespace MR.AspNet.Identity.EntityFramework6

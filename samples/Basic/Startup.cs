@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using MR.AspNet.Identity.EntityFramework6;
 
@@ -18,14 +18,10 @@ namespace Basic
 
 		public void Configure(IApplicationBuilder app)
 		{
-			app.UseIISPlatformHandler();
-
 			app.Run(async (context) =>
 			{
 				await context.Response.WriteAsync("Hello World!");
 			});
 		}
-
-		public static void Main(string[] args) => WebApplication.Run<Startup>(args);
 	}
 }

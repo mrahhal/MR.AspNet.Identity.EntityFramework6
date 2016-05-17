@@ -1,5 +1,5 @@
 using System;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using MR.AspNet.Identity.EntityFramework6.InMemory;
 using MR.Patterns.Repository;
@@ -27,10 +27,10 @@ namespace Basic.Tests
 				.AddUserStore<InMemoryUserStore<AppUser, AppRole>>()
 				.AddRoleStore<InMemoryRoleStore<AppRole>>();
 			var inMemoryRepository = new InMemoryRepository();
-			services.AddInstance<IRepository>(inMemoryRepository);
-			services.AddInstance<IIdentityUserRepository<AppUser, AppRole>>(inMemoryRepository);
-			services.AddInstance<IIdentityRoleRepository<AppRole>>(inMemoryRepository);
-			services.AddInstance<IHttpContextAccessor>(new FakeHttpContextAccessor());
+			services.AddSingleton<IRepository>(inMemoryRepository);
+			services.AddSingleton<IIdentityUserRepository<AppUser, AppRole>>(inMemoryRepository);
+			services.AddSingleton<IIdentityRoleRepository<AppRole>>(inMemoryRepository);
+			services.AddSingleton<IHttpContextAccessor>(new FakeHttpContextAccessor());
 			return services.BuildServiceProvider();
 		}
 

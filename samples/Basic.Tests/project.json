@@ -2,16 +2,14 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Basic": "",
-    "xunit": "2.1.0",
-    "xunit.runner.dnx": "2.1.0-rc1-build204"
+    "Basic": "*",
+    "xunit": "2.1.0-rc2-*",
+    "dotnet-test-xunit": "1.0.0-rc2-*"
   },
 
-  "commands": {
-    "test": "xunit.runner.dnx"
-  },
+  "testRunner": "xunit",
 
   "frameworks": {
-    "dnx451": { }
+    "net451": { }
   }
 }

@@ -5,26 +5,31 @@
   },
 
   "dependencies": {
-    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
-    "MR.AspNet.Identity.EntityFramework6": "",
-    "MR.AspNet.Identity.EntityFramework6.InMemory": ""
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "MR.AspNet.Identity.EntityFramework6": "*",
+    "MR.AspNet.Identity.EntityFramework6.InMemory": "*"
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNetCoreServer.Kestrel"
+  },
+
+  "tools": {
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
+      "version": "1.0.0-preview1-final",
+      "imports": "portable-net45+win8+dnxcore50"
+    }
   },
 
   "frameworks": {
-    "dnx451": { }
+    "net451": { }
   },
 
-  "exclude": [
-    "wwwroot",
-    "node_modules"
-  ],
-  "publishExclude": [
-    "**.user",
-    "**.vspscc"
-  ]
+  "buildOptions": {
+    "exclude": [
+      "wwwroot",
+      "node_modules"
+    ]
+  }
 }

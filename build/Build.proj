@@ -21,7 +21,6 @@
 		<Assemblies Include="MR.AspNet.Identity.EntityFramework6" />
 		<Assemblies Include="MR.AspNet.Identity.EntityFramework6.InMemory" />
 		<Assemblies Include="MR.AspNet.Identity2.EntityFramework6.InMemory" />
-		<!--<TestAssemblies Include="MR.AspNet.Identity.EntityFramework6.Tests" />-->
 	</ItemGroup>
 	<Import Project="Build.tasks" />
 
@@ -40,7 +39,7 @@
 										Replace="$(Replace)" />
 	</Target>
 
-	<Target Name="ResetVersions" AfterTargets="Build">
+	<Target Name="ResetVersions" AfterTargets="Package">
 		<PropertyGroup>
 			<Find>"version": ".+"</Find>
 			<Replace>"version": "1.0.0-*"</Replace>
@@ -51,13 +50,15 @@
 	</Target>
 
 	<Target Name="Build" DependsOnTargets="RestorePackages">
-		<MSBuild Projects="$(SolutionFile)" Targets="Rebuild" Properties="Configuration=Release;NoWarn=CS1591,CS1574" ToolsVersion="14.0" />
+		<Exec
+			WorkingDirectory="$(RootDir)/src/%(Assemblies.Identity)/"
+			Command="dotnet build -c Release" />
 	</Target>
 
 	<Target Name="RestorePackages" DependsOnTargets="Clean">
 		<Exec
 			WorkingDirectory="$(RootDir)"
-			Command="dnu restore --quiet --parallel" />
+			Command="dotnet restore --quiet" />
 	</Target>
 
 	<Target Name="Clean">
@@ -69,11 +70,14 @@
 	<Target Name="Test" DependsOnTargets="Build">
 		<!--<Exec
 			WorkingDirectory="$(RootDir)/test/%(TestAssemblies.Identity)/"
-			Command="dnx test" />-->
+			Command="dotnet test" />-->
 	</Target>
 
 	<Target Name="Package" DependsOnTargets="Build;Test">
 		<MakeDir Directories="$(RootDir)artifacts/packages" />
+		<Exec
+			WorkingDirectory="$(RootDir)/src/%(Assemblies.Identity)/"
+			Command="dotnet pack -o $(RootDir)artifacts/bin/%(Assemblies.Identity)/Release/" />
 	</Target>
 
 	<Target Name="CopyPackages" AfterTargets="Package">
