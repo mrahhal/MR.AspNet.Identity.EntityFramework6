@@ -4,14 +4,14 @@
 [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity.EntityFramework6.svg)](https://www.nuget.org/packages/MR.AspNet.Identity.EntityFramework6)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-EntityFramework 6 provider for Identity 3.0 RC1.
+EntityFramework 6 provider + InMemory providers for Asp.Net Core Identity.
 
 ## What is this?
 
-This is basically a copy-paste from the EF7 Identity 3.0 RC1 provider but edited to work with EF6. Furthermore it contains in memory stores to be used in unit tests. **However**, this is not a 1 to 1 port as some generic structures have been tweaked. All you have to do in your app:
+All you have to do in your app:
 
-- Remove everything EF7 related, this means: `EntityFramework.Commands`, `EntityFramework.MicrosoftSqlServer`, `EntityFramework.InMemory` and `Microsoft.AspNetCore.Identity.EntityFramework`. And instead add the following: `EntityFramework` and `MR.AspNet.Identity.EntityFramework6`.
-- Replace all EF7 namespaces with their EF6 counterparts.
+- Remove everything EF Core related, this means: `Microsoft.EntityFrameworkCore.Tools`, `Microsoft.EntityFrameworkCore.SqlServer`, `Microsoft.EntityFrameworkCore.InMemory` and `Microsoft.AspNetCore.Identity.EntityFramework`. And instead add the following: `EntityFramework` and `MR.AspNet.Identity.EntityFramework6`.
+- Replace all EF Core namespaces with their EF6 counterparts.
 
 ### `MR.AspNet.Identity.EntityFramework6` [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity.EntityFramework6.svg)](https://www.nuget.org/packages/MR.AspNet.Identity.EntityFramework6)
 
