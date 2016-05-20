@@ -89,9 +89,9 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 			return Task.FromResult(0);
 		}
 
-		public Task AddToRoleAsync(TUser user, string roleName, CancellationToken cancellationToken)
+		public Task AddToRoleAsync(TUser user, string normalizedRoleName, CancellationToken cancellationToken)
 		{
-			var role = _repository.Roles.Where(r => r.Name == roleName).First();
+			var role = _repository.Roles.Where(r => r.NormalizedName == normalizedRoleName).First();
 			user.Roles.Add(new TUserRole
 			{
 				RoleId = role.Id,
@@ -178,9 +178,9 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 			return Task.FromResult(list);
 		}
 
-		public Task<IList<TUser>> GetUsersInRoleAsync(string roleName, CancellationToken cancellationToken)
+		public Task<IList<TUser>> GetUsersInRoleAsync(string normalizedRoleName, CancellationToken cancellationToken)
 		{
-			var role = _repository.Roles.Where(r => r.Name == roleName).First();
+			var role = _repository.Roles.Where(r => r.NormalizedName == normalizedRoleName).First();
 			var list = new List<TUser>();
 			foreach (var user in _repository.Users.ToList())
 			{
@@ -216,9 +216,9 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 			return Task.FromResult(user.AccessFailedCount);
 		}
 
-		public Task<bool> IsInRoleAsync(TUser user, string roleName, CancellationToken cancellationToken)
+		public Task<bool> IsInRoleAsync(TUser user, string normalizedRoleName, CancellationToken cancellationToken)
 		{
-			var role = _repository.Roles.Where(r => r.Name == roleName).First();
+			var role = _repository.Roles.Where(r => r.NormalizedName == normalizedRoleName).First();
 			return Task.FromResult(user.Roles.Any(ur => ur.RoleId.Equals(role.Id) && ur.UserId.Equals(user.Id)));
 		}
 
@@ -235,9 +235,9 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 			return Task.FromResult(0);
 		}
 
-		public Task RemoveFromRoleAsync(TUser user, string roleName, CancellationToken cancellationToken)
+		public Task RemoveFromRoleAsync(TUser user, string normalizedRoleName, CancellationToken cancellationToken)
 		{
-			var role = _repository.Roles.Where(r => r.Name == roleName).First();
+			var role = _repository.Roles.Where(r => r.NormalizedName == normalizedRoleName).First();
 			var userRole = user.Roles.FirstOrDefault(ur => ur.RoleId.Equals(role.Id));
 			if (userRole != null) user.Roles.Remove(userRole);
 			return Task.FromResult(0);
