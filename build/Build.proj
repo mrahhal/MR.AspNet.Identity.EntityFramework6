@@ -58,7 +58,7 @@
 	<Target Name="RestorePackages" DependsOnTargets="Clean">
 		<Exec
 			WorkingDirectory="$(RootDir)"
-			Command="dotnet restore --quiet" />
+			Command="dotnet restore" />
 	</Target>
 
 	<Target Name="Clean">
