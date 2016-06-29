@@ -1,19 +1,16 @@
 {
   "version": "1.0.0-*",
-  "compilationOptions": {
-    "emitEntryPoint": true
-  },
 
   "dependencies": {
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-final",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
     "MR.AspNet.Identity.EntityFramework6": "*",
     "MR.AspNet.Identity.EntityFramework6.InMemory": "*"
   },
 
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
-      "version": "1.0.0-preview1-final",
+      "version": "1.0.0-preview2-final",
       "imports": "portable-net45+win8+dnxcore50"
     }
   },
@@ -23,6 +20,7 @@
   },
 
   "buildOptions": {
+    "emitEntryPoint": true,
     "exclude": [
       "wwwroot",
       "node_modules"
