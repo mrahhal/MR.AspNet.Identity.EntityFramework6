@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build;Test;Package;PrintVersion" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
-		<Major>1</Major>
-		<Minor>3</Minor>
-		<Patch>2</Patch>
+		<Major>2</Major>
+		<Minor>0</Minor>
+		<Patch>0</Patch>
 		<Quality></Quality> <!-- the quality should be 6 characters long max (imposed by nuget) -->
 
 		<Version>$(Major).$(Minor).$(Patch)</Version>
