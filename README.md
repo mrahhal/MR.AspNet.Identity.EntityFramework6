@@ -30,3 +30,8 @@ Contains in memory implementations of `IUserStore` and `IRoleStore` for identity
 ## EF6 migrations for Asp.Net Core?
 
 Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
+
+## Release notes
+
+#### `2.1.0`
+This release is for .Net Core 1.1.0
