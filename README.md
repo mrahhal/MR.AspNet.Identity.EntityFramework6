@@ -17,6 +17,10 @@ All you have to do in your app:
 
 The port of `Microsoft.AspNetCore.Identity.EntityFramework` to work under EF6.
 
+### `MR.AspNet.Identity.EntityFramework6.Key.Int` [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity.EntityFramework6.Key.Int.svg)](https://www.nuget.org/packages/MR.AspNet.Identity.EntityFramework6.Key.Int)
+
+An implementation that uses an int as the primary key for users and roles.
+
 ### `MR.AspNet.Identity.EntityFramework6.InMemory` [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity.EntityFramework6.InMemory.svg)](https://www.nuget.org/packages/MR.AspNet.Identity.EntityFramework6.InMemory)
 
 Contains in memory implementations of `IUserStore` and `IRoleStore` to be used in unit tests.
@@ -26,6 +30,10 @@ Contains in memory implementations of `IUserStore` and `IRoleStore` to be used i
 Contains in memory implementations of `IUserStore` and `IRoleStore` for identity 2 to be used in unit tests.
 
 **Note:** In memory stores have a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
+
+## Samples
+
+Check out the samples in the `samples/` directory.
 
 ## EF6 migrations for Asp.Net Core?
 
