@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "MR.AspNet.Identity.EntityFramework6.Key.Int": "*",
+    "Migrator.EF6.Tools": {
+      "type": "build",
+      "version": "1.0.8"
+    }
+  },
+
+  "tools": {
+    "Migrator.EF6.Tools": "1.0.8"
+  },
+
+  "frameworks": {
+    "net451": {}
+  }
+}
