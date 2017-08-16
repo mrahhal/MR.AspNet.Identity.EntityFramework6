@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4CD0912B
 		build\index.cake = build\index.cake
 		build\util.cake = build\util.cake
 		build\version.cake = build\version.cake
-		build\version.json = build\version.json
+		build\version.props = build\version.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MR.AspNet.Identity.EntityFramework6", "src\MR.AspNet.Identity.EntityFramework6\MR.AspNet.Identity.EntityFramework6.csproj", "{DD224495-5E7D-42B7-B10D-02D1C511B797}"
