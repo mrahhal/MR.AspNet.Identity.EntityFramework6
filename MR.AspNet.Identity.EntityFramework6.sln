@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0670E6AF-F20A-41C5-A0D6-B882911A6B57}"
 EndProject
@@ -11,27 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MR.AspNet.Identity.EntityFramework6", "src\MR.AspNet.Identity.EntityFramework6\MR.AspNet.Identity.EntityFramework6.xproj", "{DD224495-5E7D-42B7-B10D-02D1C511B797}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{30CB62A8-0B95-4AD1-88CB-6CAC8004DDE4}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MR.AspNet.Identity.EntityFramework6.InMemory", "src\MR.AspNet.Identity.EntityFramework6.InMemory\MR.AspNet.Identity.EntityFramework6.InMemory.xproj", "{69E3E089-D77C-49F7-8FC3-4E7908E249D5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C5F42168-4469-4F0A-9E0E-E86A5D220857}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Basic", "samples\Basic\Basic.xproj", "{8ED4E3FB-4F08-437E-8D7C-890BE315F899}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Basic.Tests", "samples\Basic.Tests\Basic.Tests.xproj", "{650A5A85-5956-491E-9312-5E25A27D1108}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MR.AspNet.Identity2.EntityFramework6.InMemory", "src\MR.AspNet.Identity2.EntityFramework6.InMemory\MR.AspNet.Identity2.EntityFramework6.InMemory.xproj", "{F3B96F9E-6CF3-41E1-9351-F03897390A1C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MR.AspNet.Identity.EntityFramework6.Key.Int", "src\MR.AspNet.Identity.EntityFramework6.Key.Int\MR.AspNet.Identity.EntityFramework6.Key.Int.xproj", "{CD7BED02-2DD8-4793-A8BE-B0ACB16AA712}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Key.Int", "samples\Key.Int\Key.Int.xproj", "{1DD7BD7F-AD83-40B0-94EB-1358E30F1C5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4CD0912B-A016-4592-8015-0602BE243DB5}"
 	ProjectSection(SolutionItems) = preProject
@@ -42,6 +27,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4CD0912B
 		build\version.cake = build\version.cake
 		build\version.json = build\version.json
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MR.AspNet.Identity.EntityFramework6", "src\MR.AspNet.Identity.EntityFramework6\MR.AspNet.Identity.EntityFramework6.csproj", "{DD224495-5E7D-42B7-B10D-02D1C511B797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MR.AspNet.Identity.EntityFramework6.InMemory", "src\MR.AspNet.Identity.EntityFramework6.InMemory\MR.AspNet.Identity.EntityFramework6.InMemory.csproj", "{69E3E089-D77C-49F7-8FC3-4E7908E249D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic", "samples\Basic\Basic.csproj", "{8ED4E3FB-4F08-437E-8D7C-890BE315F899}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic.Tests", "samples\Basic.Tests\Basic.Tests.csproj", "{650A5A85-5956-491E-9312-5E25A27D1108}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MR.AspNet.Identity2.EntityFramework6.InMemory", "src\MR.AspNet.Identity2.EntityFramework6.InMemory\MR.AspNet.Identity2.EntityFramework6.InMemory.csproj", "{F3B96F9E-6CF3-41E1-9351-F03897390A1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MR.AspNet.Identity.EntityFramework6.Key.Int", "src\MR.AspNet.Identity.EntityFramework6.Key.Int\MR.AspNet.Identity.EntityFramework6.Key.Int.csproj", "{CD7BED02-2DD8-4793-A8BE-B0ACB16AA712}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Key.Int", "samples\Key.Int\Key.Int.csproj", "{1DD7BD7F-AD83-40B0-94EB-1358E30F1C5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,5 +88,8 @@ Global
 		{F3B96F9E-6CF3-41E1-9351-F03897390A1C} = {0670E6AF-F20A-41C5-A0D6-B882911A6B57}
 		{CD7BED02-2DD8-4793-A8BE-B0ACB16AA712} = {0670E6AF-F20A-41C5-A0D6-B882911A6B57}
 		{1DD7BD7F-AD83-40B0-94EB-1358E30F1C5C} = {C5F42168-4469-4F0A-9E0E-E86A5D220857}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {996A6497-B28F-4390-912A-60FD6B74671C}
 	EndGlobalSection
 EndGlobal

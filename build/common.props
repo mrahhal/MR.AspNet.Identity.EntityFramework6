@@ -1,0 +1,15 @@
+<Project>
+
+  <Import Project="version.props" />
+
+  <PropertyGroup Label="Build">
+    <TargetFrameworks>net451</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Authors>Mohammad Rahhal @mrahhal</Authors>
+    <PackageProjectUrl>https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/blob/master/LICENSE.txt</PackageLicenseUrl>
+  </PropertyGroup>
+
+</Project>
