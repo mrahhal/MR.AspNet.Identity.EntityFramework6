@@ -3,7 +3,6 @@
   <Import Project="../../build/common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net451</TargetFramework>
     <Description>In memory stores for MR.AspNet.Identity.EntityFramework6.</Description>
     <PackageTags>aspnetcore;aspnet;identity;inmemory;testing</PackageTags>
   </PropertyGroup>
