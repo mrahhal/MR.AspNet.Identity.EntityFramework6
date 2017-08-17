@@ -41,5 +41,8 @@ Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
 
 ## Release notes
 
+#### `3.0.0`
+- Support Asp.Net Core Identity 2.0.
+
 #### `2.1.0`
 This release is for .Net Core 1.1.0
