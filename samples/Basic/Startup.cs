@@ -12,7 +12,9 @@ namespace Basic
 		{
 			services.AddLogging();
 			services.AddTransient((_) => new AppDbContext("Server=(localdb)\\mssqllocaldb;Database=MR.AspNet.Identity.EntityFramework6-Basic;Trusted_Connection=True;MultipleActiveResultSets=true"));
-			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>();
+			services.AddIdentityCore<AppUser>(_ => { })
+				.AddRoles<AppRole>()
+				.AddEntityFrameworkStores<AppDbContext>();
 			services.AddTransient<IRepository, DefaultRepository>();
 		}
 

@@ -22,8 +22,8 @@ namespace Basic.Tests
 		{
 			var services = new ServiceCollection();
 			services.AddLogging();
-			services
-				.AddIdentity<AppUser, AppRole>()
+			services.AddIdentityCore<AppUser>(_ => { })
+				.AddRoles<AppRole>()
 				.AddUserStore<InMemoryUserStore<AppUser, AppRole>>()
 				.AddRoleStore<InMemoryRoleStore<AppRole>>();
 			var inMemoryRepository = new InMemoryRepository();
