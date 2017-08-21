@@ -41,6 +41,9 @@ Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
 
 ## Release notes
 
+#### `3.0.1`
+- Switched to reference `Microsoft.Extensions.Identity.Core`. [#11](https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/pull/11)
+
 #### `3.0.0`
 - Support Asp.Net Core Identity 2.0.
 
