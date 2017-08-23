@@ -74,7 +74,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// Base class for the Entity Framework database context used for identity.
 	/// </summary>
 	/// <typeparam name="TUser">The type of the user objects.</typeparam>
-	public class IdentityDbContextInt<TUser> : IdentityDbContext<TUser, IdentityRoleInt, int, IdentityUserLoginInt, IdentityUserRoleInt, IdentityUserClaimInt, IdentityRoleClaimInt>
+	public class IdentityDbContextInt<TUser> : IdentityDbContext<TUser, IdentityRoleInt, int, IdentityUserLoginInt, IdentityUserRoleInt, IdentityUserClaimInt, IdentityRoleClaimInt, IdentityUserTokenInt>
 		where TUser : IdentityUserInt
 	{
 		/// <summary>

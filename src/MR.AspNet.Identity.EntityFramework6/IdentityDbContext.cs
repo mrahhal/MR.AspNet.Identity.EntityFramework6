@@ -82,7 +82,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// Base class for the Entity Framework database context used for identity.
 	/// </summary>
 	/// <typeparam name="TUser">The type of the user objects.</typeparam>
-	public class IdentityDbContext<TUser> : IdentityDbContext<TUser, IdentityRole, string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityRoleClaim>
+	public class IdentityDbContext<TUser> : IdentityDbContext<TUser, IdentityRole, string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityRoleClaim, IdentityUserToken>
 		where TUser : IdentityUser
 	{
 		/// <summary>
@@ -157,14 +157,15 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TUserRole">The type that represents the link between a user and a role.</typeparam>
 	/// <typeparam name="TUserClaim">The type that represents a claim that a user possesses.</typeparam>
 	/// <typeparam name="TRoleClaim">The type that represents a claim that is granted to all users within a role.</typeparam>
-	public class IdentityDbContext<TUser, TRole, TKey, TUserLogin, TUserRole, TUserClaim, TRoleClaim> : DbContext
+	public class IdentityDbContext<TUser, TRole, TKey, TUserLogin, TUserRole, TUserClaim, TRoleClaim, TUserToken> : DbContext
 		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim>
 		where TRole : IdentityRole<TKey, TUserRole, TRoleClaim>
-		where TUserLogin : IdentityUserLogin<TKey>
-		where TUserRole : IdentityUserRole<TKey>
-		where TUserClaim : IdentityUserClaim<TKey>
-		where TRoleClaim : IdentityRoleClaim<TKey>
 		where TKey : IEquatable<TKey>
+		where TUserClaim : IdentityUserClaim<TKey>
+		where TUserRole : IdentityUserRole<TKey>
+		where TUserLogin : IdentityUserLogin<TKey>
+		where TRoleClaim : IdentityRoleClaim<TKey>
+		where TUserToken : IdentityUserToken<TKey>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IdentityDbContext" /> class using the connection string for the database to which a connection will be made.

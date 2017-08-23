@@ -36,7 +36,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TUser">The type representing a user.</typeparam>
 	/// <typeparam name="TRole">The type representing a role.</typeparam>
 	/// <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
-	public class UserStoreInt<TUser, TRole, TContext> : UserStore<TUser, TRole, IdentityUserRoleInt, IdentityUserClaimInt, IdentityUserLoginInt, IdentityRoleClaimInt, TContext, int>
+	public class UserStoreInt<TUser, TRole, TContext> : UserStore<TUser, TRole, IdentityUserRoleInt, IdentityUserClaimInt, IdentityUserLoginInt, IdentityRoleClaimInt, TContext, int, IdentityUserTokenInt>
 		where TUser : IdentityUser<int, IdentityUserLoginInt, IdentityUserRoleInt, IdentityUserClaimInt>, new()
 		where TRole : IdentityRole<int, IdentityUserRoleInt, IdentityRoleClaimInt>, new()
 		where TContext : DbContext
