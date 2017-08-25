@@ -259,6 +259,11 @@ namespace MR.AspNet.Identity.EntityFramework6
 		public DbSet<TRoleClaim> RoleClaims { get; set; }
 
 		/// <summary>
+		/// Gets or sets the <see cref="DbSet{TEntity}"/> of User tokens.
+		/// </summary>
+		public DbSet<TUserToken> UserTokens { get; set; }
+
+		/// <summary>
 		///     If true validates that emails are unique
 		/// </summary>
 		public bool RequireUniqueEmail { get; set; }
