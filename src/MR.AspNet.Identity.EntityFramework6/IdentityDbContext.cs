@@ -308,6 +308,10 @@ namespace MR.AspNet.Identity.EntityFramework6
 
 			modelBuilder.Entity<TRoleClaim>()
 				.ToTable("AspNetRoleClaims");
+
+			modelBuilder.Entity<TUserToken>()
+				.HasKey(l => new { l.UserId, l.LoginProvider, l.Name })
+				.ToTable("AspNetUserTokens");
 		}
 
 		protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry,
