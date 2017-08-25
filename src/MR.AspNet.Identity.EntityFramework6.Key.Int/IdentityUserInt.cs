@@ -3,7 +3,7 @@
 	/// <summary>
 	/// An implementation of <see cref="IdentityUser{TKey}"/> which uses an int as a primary key.
 	/// </summary>
-	public class IdentityUserInt : IdentityUser<int, IdentityUserLoginInt, IdentityUserRoleInt, IdentityUserClaimInt>
+	public class IdentityUserInt : IdentityUser<int, IdentityUserLoginInt, IdentityUserRoleInt, IdentityUserClaimInt, IdentityUserTokenInt>
 	{
 		public IdentityUserInt()
 		{

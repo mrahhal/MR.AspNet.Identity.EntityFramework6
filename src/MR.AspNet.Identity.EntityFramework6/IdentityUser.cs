@@ -6,7 +6,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <summary>
 	/// The default implementation of <see cref="IdentityUser{TKey}"/> which uses a string as a primary key.
 	/// </summary>
-	public class IdentityUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>
+	public class IdentityUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>
 	{
 		/// <summary>
 		/// Initializes a new instance of <see cref="IdentityUser"/>.
@@ -40,10 +40,11 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TUserLogin">The type that represents a login.</typeparam>
 	/// <typeparam name="TUserRole">The type that represents the link between a user and a role.</typeparam>
 	/// <typeparam name="TUserClaim">The type that represents a claim that a user possesses.</typeparam>
-	public class IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim>
+	public class IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim, TUserToken>
 		where TUserLogin : IdentityUserLogin<TKey>
 		where TUserRole : IdentityUserRole<TKey>
 		where TUserClaim : IdentityUserClaim<TKey>
+		where TUserToken : IdentityUserToken<TKey>
 		where TKey : IEquatable<TKey>
 	{
 		/// <summary>
@@ -162,6 +163,11 @@ namespace MR.AspNet.Identity.EntityFramework6
 		/// Navigation property for this users login accounts.
 		/// </summary>
 		public virtual ICollection<TUserLogin> Logins { get; }
+
+		/// <summary>
+		/// Navigation property for this user's tokens.
+		/// </summary>
+		public virtual ICollection<TUserToken> Tokens { get; }
 
 		/// <summary>
 		/// Returns the username for this user.

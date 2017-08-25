@@ -17,7 +17,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// of <see cref="IdentityUser{TKey}"/> with a string as a primary key.
 	/// </summary>
 	/// <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
-	public class UserStore<TContext> : UserStore<IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, TContext>
+	public class UserStore<TContext> : UserStore<IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>, TContext>
 		where TContext : DbContext
 	{
 		public UserStore(TContext context, IdentityErrorDescriber describer = null) : base(context, describer)
@@ -31,7 +31,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TUser">The type representing a user.</typeparam>
 	/// <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
 	public class UserStore<TUser, TContext> : UserStore<TUser, IdentityRole, TContext>
-		where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, new()
+		where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>, new()
 		where TContext : DbContext
 	{
 		public UserStore(TContext context, IdentityErrorDescriber describer = null) : base(context, describer)
@@ -46,7 +46,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TRole">The type representing a role.</typeparam>
 	/// <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
 	public class UserStore<TUser, TRole, TContext> : UserStore<TUser, TRole, IdentityUserRole, IdentityUserClaim, IdentityUserLogin, IdentityRoleClaim, TContext, string, IdentityUserToken>
-		where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, new()
+		where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>, new()
 		where TRole : IdentityRole<string, IdentityUserRole, IdentityRoleClaim>, new()
 		where TContext : DbContext
 	{
@@ -63,7 +63,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TContext">The type of the data context class used to access the store.</typeparam>
 	/// <typeparam name="TKey">The type of the primary key.</typeparam>
 	public class UserStore<TUser, TRole, TContext, TKey> : UserStore<TUser, TRole, IdentityUserRole<TKey>, IdentityUserClaim<TKey>, IdentityUserLogin<TKey>, IdentityRoleClaim<TKey>, TContext, TKey, IdentityUserToken<TKey>>
-		where TUser : IdentityUser<TKey, IdentityUserLogin<TKey>, IdentityUserRole<TKey>, IdentityUserClaim<TKey>>, new()
+		where TUser : IdentityUser<TKey, IdentityUserLogin<TKey>, IdentityUserRole<TKey>, IdentityUserClaim<TKey>, IdentityUserToken<TKey>>, new()
 		where TRole : IdentityRole<TKey, IdentityUserRole<TKey>, IdentityRoleClaim<TKey>>, new()
 		where TContext : DbContext
 		where TKey : IEquatable<TKey>
@@ -87,7 +87,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 		IUserAuthenticationTokenStore<TUser>,
 		IUserAuthenticatorKeyStore<TUser>,
 		IUserTwoFactorRecoveryCodeStore<TUser>
-		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim>, new()
+		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim, TUserToken>, new()
 		where TRole : IdentityRole<TKey, TUserRole, TRoleClaim>, new()
 		where TUserRole : IdentityUserRole<TKey>, new()
 		where TUserClaim : IdentityUserClaim<TKey>, new()

@@ -158,7 +158,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 	/// <typeparam name="TUserClaim">The type that represents a claim that a user possesses.</typeparam>
 	/// <typeparam name="TRoleClaim">The type that represents a claim that is granted to all users within a role.</typeparam>
 	public class IdentityDbContext<TUser, TRole, TKey, TUserLogin, TUserRole, TUserClaim, TRoleClaim, TUserToken> : DbContext
-		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim>
+		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim, TUserToken>
 		where TRole : IdentityRole<TKey, TUserRole, TRoleClaim>
 		where TKey : IEquatable<TKey>
 		where TUserClaim : IdentityUserClaim<TKey>
@@ -285,6 +285,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 			user.HasMany(u => u.Roles).WithRequired().HasForeignKey(ur => ur.UserId);
 			user.HasMany(u => u.Claims).WithRequired().HasForeignKey(uc => uc.UserId);
 			user.HasMany(u => u.Logins).WithRequired().HasForeignKey(ul => ul.UserId);
+			user.HasMany(u => u.Tokens).WithRequired().HasForeignKey(ut => ut.UserId);
 
 			modelBuilder.Entity<TUserRole>()
 				.HasKey(r => new { r.UserId, r.RoleId })

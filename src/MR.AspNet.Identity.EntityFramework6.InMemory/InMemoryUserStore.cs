@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MR.AspNet.Identity.EntityFramework6.InMemory
 {
-	public class InMemoryUserStore : InMemoryUserStore<IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>>
+	public class InMemoryUserStore : InMemoryUserStore<IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>>
 	{
 		public InMemoryUserStore(IIdentityUserRepository repository)
 			: base(repository)
@@ -18,7 +18,7 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 	}
 
 	public class InMemoryUserStore<TUser> : InMemoryUserStore<TUser, IdentityRole>
-	   where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, new()
+	   where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>, new()
 	{
 		public InMemoryUserStore(IIdentityUserRepository<TUser> repository)
 			: base(repository)
@@ -26,8 +26,8 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 		}
 	}
 
-	public class InMemoryUserStore<TUser, TRole> : InMemoryUserStore<TUser, TRole, IdentityUserRole, IdentityUserClaim, IdentityUserLogin, IdentityRoleClaim, string>
-		where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, new()
+	public class InMemoryUserStore<TUser, TRole> : InMemoryUserStore<TUser, TRole, IdentityUserRole, IdentityUserClaim, IdentityUserLogin, IdentityRoleClaim, IdentityUserToken, string>
+		where TUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim, IdentityUserToken>, new()
 		where TRole : IdentityRole<string, IdentityUserRole, IdentityRoleClaim>, new()
 	{
 		public InMemoryUserStore(IIdentityUserRepository<TUser, TRole> repository)
@@ -36,8 +36,8 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 		}
 	}
 
-	public class InMemoryUserStore<TUser, TRole, TKey> : InMemoryUserStore<TUser, TRole, IdentityUserRole<TKey>, IdentityUserClaim<TKey>, IdentityUserLogin<TKey>, IdentityRoleClaim<TKey>, TKey>
-		where TUser : IdentityUser<TKey, IdentityUserLogin<TKey>, IdentityUserRole<TKey>, IdentityUserClaim<TKey>>, new()
+	public class InMemoryUserStore<TUser, TRole, TKey> : InMemoryUserStore<TUser, TRole, IdentityUserRole<TKey>, IdentityUserClaim<TKey>, IdentityUserLogin<TKey>, IdentityRoleClaim<TKey>, IdentityUserToken<TKey>, TKey>
+		where TUser : IdentityUser<TKey, IdentityUserLogin<TKey>, IdentityUserRole<TKey>, IdentityUserClaim<TKey>, IdentityUserToken<TKey>>, new()
 		where TRole : IdentityRole<TKey, IdentityUserRole<TKey>, IdentityRoleClaim<TKey>>, new()
 		where TKey : IEquatable<TKey>
 	{
@@ -47,7 +47,7 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 		}
 	}
 
-	public class InMemoryUserStore<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TKey> :
+	public class InMemoryUserStore<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TUserToken, TKey> :
 		IUserLoginStore<TUser>,
 		IUserRoleStore<TUser>,
 		IUserClaimStore<TUser>,
@@ -58,17 +58,18 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 		IUserPhoneNumberStore<TUser>,
 		IQueryableUserStore<TUser>,
 		IUserTwoFactorStore<TUser>
-		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim>, new()
+		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim, TUserToken>, new()
 		where TRole : IdentityRole<TKey, TUserRole, TRoleClaim>, new()
 		where TUserRole : IdentityUserRole<TKey>, new()
 		where TUserClaim : IdentityUserClaim<TKey>, new()
 		where TUserLogin : IdentityUserLogin<TKey>, new()
 		where TRoleClaim : IdentityRoleClaim<TKey>
+		where TUserToken : IdentityUserToken<TKey>
 		where TKey : IEquatable<TKey>
 	{
-		private IIdentityUserRepository<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TKey> _repository;
+		private IIdentityUserRepository<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TUserToken, TKey> _repository;
 
-		public InMemoryUserStore(IIdentityUserRepository<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TKey> repository)
+		public InMemoryUserStore(IIdentityUserRepository<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TUserToken, TKey> repository)
 		{
 			_repository = repository;
 		}
