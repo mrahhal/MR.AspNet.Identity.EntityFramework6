@@ -41,6 +41,9 @@ Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
 
 ## Release notes
 
+#### `3.0.3`
+- Minor fixes.
+
 #### `3.0.2`
 - Implement additional interfaces in the stores.
 
