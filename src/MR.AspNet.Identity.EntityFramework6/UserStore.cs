@@ -1072,7 +1072,7 @@ namespace MR.AspNet.Identity.EntityFramework6
 		/// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
 		/// <returns>The user token if it exists.</returns>
 		protected Task<TUserToken> FindTokenAsync(TUser user, string loginProvider, string name, CancellationToken cancellationToken)
-			=> UserTokens.FindAsync(new object[] { user.Id, loginProvider, name }, cancellationToken);
+			=> UserTokens.FindAsync(cancellationToken, new object[] { user.Id, loginProvider, name );
 
 		/// <summary>
 		/// Add a new user token.
