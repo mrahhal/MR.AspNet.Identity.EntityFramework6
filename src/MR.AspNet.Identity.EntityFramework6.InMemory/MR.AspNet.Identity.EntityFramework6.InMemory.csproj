@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MR.Patterns.Repository" Version="1.2.0" />
+    <PackageReference Include="MR.Patterns.Repository" Version="2.4.0" />
   </ItemGroup>
 
 </Project>

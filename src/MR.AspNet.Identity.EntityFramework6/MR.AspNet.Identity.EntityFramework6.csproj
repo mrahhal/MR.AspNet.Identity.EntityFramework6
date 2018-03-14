@@ -13,8 +13,8 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.0.0" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
-    <Reference Include="System.Data" />
+  <ItemGroup>
+    <ProjectReference Include="..\MR.AspNet.Identity.EntityFramework6.Models\MR.AspNet.Identity.EntityFramework6.Models.csproj" />
   </ItemGroup>
 
 </Project>

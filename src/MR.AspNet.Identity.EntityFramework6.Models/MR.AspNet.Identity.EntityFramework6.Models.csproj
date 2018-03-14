@@ -1,15 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="../../build/version.props" />
+  <Import Project="../../build/common.props" />
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-  </PropertyGroup>
-
-  <PropertyGroup Label="Package">
-    <Authors>Mohammad Rahhal @mrahhal</Authors>
-    <PackageProjectUrl>https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <Description>EntityFramework 6 provider models.</Description>
+    <PackageTags>aspnetcore;aspnet;identity</PackageTags>
   </PropertyGroup>
 
 </Project>
