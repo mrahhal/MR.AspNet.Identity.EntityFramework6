@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>3.0.4</Version>
+    <Authors>Mohammad Rahhal @mrahhal</Authors>
+    <Company>Mohammad Rahhal @mrahhal</Company>
+    <Product>MR.AspNet.Identity.EntityFramework6.Model</Product>
+    <Description>Entities for MR.AspNet.Identity.EntityFramework6</Description>
+    <PackageLicenseUrl>https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6</PackageProjectUrl>
+    <PackageTags>aspnetcore;aspnet;identity;inmemory;testing</PackageTags>
+  </PropertyGroup>
+
+</Project>
