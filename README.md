@@ -31,6 +31,10 @@ Contains in memory implementations of `IUserStore` and `IRoleStore` for identity
 
 **Note:** In memory stores have a dependency on [`MR.Patterns.Repository`](https://github.com/mrahhal/MR.Patterns.Repository) for the in memory repository implementation.
 
+### `MR.AspNet.Identity.EntityFramework6.Models` [![NuGet version](https://badge.fury.io/nu/MR.AspNet.Identity.EntityFramework6.Models.svg)](https://www.nuget.org/packages/MR.AspNet.Identity.EntityFramework6.Models)
+
+Contains the models. This package has no dependencies.
+
 ## Samples
 
 Check out the samples in the `samples/` directory.
@@ -40,6 +44,9 @@ Check out the samples in the `samples/` directory.
 Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
 
 ## Release notes
+
+#### `3.0.4`
+- Separate models into different package: `MR.AspNet.Identity.EntityFramework6.Models`. [#17](https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/pull/17)
 
 #### `3.0.3`
 - Minor fixes.
