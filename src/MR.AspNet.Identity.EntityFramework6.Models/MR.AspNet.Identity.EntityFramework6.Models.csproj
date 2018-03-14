@@ -3,7 +3,7 @@
   <Import Project="../../build/common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFrameworks>netstandard1.3</TargetFrameworks>
     <Description>EntityFramework 6 provider models.</Description>
     <PackageTags>aspnetcore;aspnet;identity</PackageTags>
   </PropertyGroup>
