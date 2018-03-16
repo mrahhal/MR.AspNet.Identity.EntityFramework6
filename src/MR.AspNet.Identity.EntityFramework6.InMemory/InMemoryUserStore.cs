@@ -57,14 +57,17 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 		IUserLockoutStore<TUser>,
 		IUserPhoneNumberStore<TUser>,
 		IQueryableUserStore<TUser>,
-		IUserTwoFactorStore<TUser>
+		IUserTwoFactorStore<TUser>,
+		IUserAuthenticationTokenStore<TUser>,
+		IUserAuthenticatorKeyStore<TUser>,
+		IUserTwoFactorRecoveryCodeStore<TUser>
 		where TUser : IdentityUser<TKey, TUserLogin, TUserRole, TUserClaim, TUserToken>, new()
 		where TRole : IdentityRole<TKey, TUserRole, TRoleClaim>, new()
 		where TUserRole : IdentityUserRole<TKey>, new()
 		where TUserClaim : IdentityUserClaim<TKey>, new()
 		where TUserLogin : IdentityUserLogin<TKey>, new()
 		where TRoleClaim : IdentityRoleClaim<TKey>
-		where TUserToken : IdentityUserToken<TKey>
+		where TUserToken : IdentityUserToken<TKey>, new()
 		where TKey : IEquatable<TKey>
 	{
 		private IIdentityUserRepository<TUser, TRole, TUserRole, TUserClaim, TUserLogin, TRoleClaim, TUserToken, TKey> _repository;
@@ -392,5 +395,91 @@ namespace MR.AspNet.Identity.EntityFramework6.InMemory
 
 		public Task<bool> GetTwoFactorEnabledAsync(TUser user, CancellationToken cancellationToken)
 			=> Task.FromResult(user.TwoFactorEnabled);
+
+		public Task SetTokenAsync(TUser user, string loginProvider, string name, string value, CancellationToken cancellationToken)
+		{
+			var token = user.Tokens
+				.Where(x => x.LoginProvider == loginProvider && x.Name == name)
+				.FirstOrDefault();
+			if (token == null)
+			{
+				user.Tokens.Add(CreateUserToken(user, loginProvider, name, value));
+			}
+			else
+			{
+				token.Value = value;
+			}
+			return Task.CompletedTask;
+		}
+
+		protected virtual TUserToken CreateUserToken(TUser user, string loginProvider, string name, string value)
+		{
+			return new TUserToken
+			{
+				UserId = user.Id,
+				LoginProvider = loginProvider,
+				Name = name,
+				Value = value
+			};
+		}
+
+		public Task RemoveTokenAsync(TUser user, string loginProvider, string name, CancellationToken cancellationToken)
+		{
+			var token = user.Tokens
+				.Where(x => x.LoginProvider == loginProvider && x.Name == name)
+				.FirstOrDefault();
+			if (token != null)
+			{
+				user.Tokens.Remove(token);
+			}
+			return Task.CompletedTask;
+		}
+
+		public Task<string> GetTokenAsync(TUser user, string loginProvider, string name, CancellationToken cancellationToken)
+		{
+			var token = user.Tokens
+				.Where(x => x.LoginProvider == loginProvider && x.Name == name)
+				.FirstOrDefault();
+			return Task.FromResult(token?.Value);
+		}
+
+		private const string InternalLoginProvider = "[AspNetUserStore]";
+		private const string AuthenticatorKeyTokenName = "AuthenticatorKey";
+		private const string RecoveryCodeTokenName = "RecoveryCodes";
+
+		public Task SetAuthenticatorKeyAsync(TUser user, string key, CancellationToken cancellationToken)
+			=> SetTokenAsync(user, InternalLoginProvider, AuthenticatorKeyTokenName, key, cancellationToken);
+
+		public Task<string> GetAuthenticatorKeyAsync(TUser user, CancellationToken cancellationToken)
+			=> GetTokenAsync(user, InternalLoginProvider, AuthenticatorKeyTokenName, cancellationToken);
+
+		public Task ReplaceCodesAsync(TUser user, IEnumerable<string> recoveryCodes, CancellationToken cancellationToken)
+		{
+			var mergedCodes = string.Join(";", recoveryCodes);
+			return SetTokenAsync(user, InternalLoginProvider, RecoveryCodeTokenName, mergedCodes, cancellationToken);
+		}
+
+		public async Task<bool> RedeemCodeAsync(TUser user, string code, CancellationToken cancellationToken)
+		{
+			var mergedCodes = await GetTokenAsync(user, InternalLoginProvider, RecoveryCodeTokenName, cancellationToken) ?? "";
+			var splitCodes = mergedCodes.Split(';');
+			if (splitCodes.Contains(code))
+			{
+				var updatedCodes = new List<string>(splitCodes.Where(s => s != code));
+				await ReplaceCodesAsync(user, updatedCodes, cancellationToken);
+				return true;
+			}
+			return false;
+		}
+
+		public async Task<int> CountCodesAsync(TUser user, CancellationToken cancellationToken)
+		{
+			var mergedCodes = await GetTokenAsync(user, InternalLoginProvider, RecoveryCodeTokenName, cancellationToken) ?? "";
+			if (mergedCodes.Length > 0)
+			{
+				return mergedCodes.Split(';').Length;
+			}
+			return 0;
+		}
 	}
 }
