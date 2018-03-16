@@ -52,9 +52,6 @@ namespace MR.AspNet.Identity.EntityFramework6
 		/// </summary>
 		public IdentityUser()
 		{
-			Claims = new List<TUserClaim>();
-			Roles = new List<TUserRole>();
-			Logins = new List<TUserLogin>();
 			ConcurrencyStamp = Guid.NewGuid().ToString();
 		}
 
@@ -152,22 +149,22 @@ namespace MR.AspNet.Identity.EntityFramework6
 		/// <summary>
 		/// Navigation property for the roles this user belongs to.
 		/// </summary>
-		public virtual ICollection<TUserRole> Roles { get; }
+		public virtual ICollection<TUserRole> Roles { get; } = new List<TUserRole>();
 
 		/// <summary>
 		/// Navigation property for the claims this user possesses.
 		/// </summary>
-		public virtual ICollection<TUserClaim> Claims { get; }
+		public virtual ICollection<TUserClaim> Claims { get; } = new List<TUserClaim>();
 
 		/// <summary>
 		/// Navigation property for this users login accounts.
 		/// </summary>
-		public virtual ICollection<TUserLogin> Logins { get; }
+		public virtual ICollection<TUserLogin> Logins { get; } = new List<TUserLogin>();
 
 		/// <summary>
 		/// Navigation property for this user's tokens.
 		/// </summary>
-		public virtual ICollection<TUserToken> Tokens { get; }
+		public virtual ICollection<TUserToken> Tokens { get; } = new List<TUserToken>();
 
 		/// <summary>
 		/// Returns the username for this user.
