@@ -45,6 +45,9 @@ Check out [Migrator.EF6](https://github.com/mrahhal/Migrator.EF6).
 
 ## Release notes
 
+#### `3.0.6`
+- Minor fixes.
+
 #### `3.0.5`
 - Separate models into different package: `MR.AspNet.Identity.EntityFramework6.Models`. [#17](https://github.com/mrahhal/MR.AspNet.Identity.EntityFramework6/pull/17)
 
