@@ -5,7 +5,15 @@
   <PropertyGroup>
     <Description>In memory stores for MR.AspNet.Identity.EntityFramework6.</Description>
     <PackageTags>aspnetcore;aspnet;identity;inmemory;testing</PackageTags>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\MR.AspNet.Identity.EntityFramework6\MR.AspNet.Identity.EntityFramework6.csproj" />
