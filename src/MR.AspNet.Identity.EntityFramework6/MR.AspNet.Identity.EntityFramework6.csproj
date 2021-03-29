@@ -1,20 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="../../build/common.props" />
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
   <PropertyGroup>
     <Description>EntityFramework 6 provider for Identity 3.0.</Description>
     <PackageTags>aspnetcore;aspnet;identity</PackageTags>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.1.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.0.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.2.217201">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\MR.AspNet.Identity.EntityFramework6.Models\MR.AspNet.Identity.EntityFramework6.Models.csproj" />
-  </ItemGroup>
-
 </Project>

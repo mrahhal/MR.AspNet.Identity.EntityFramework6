@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MR.AspNet.Identity.EntityFramework6.Key.Int\MR.AspNet.Identity.EntityFramework6.Key.Int.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Migrator.EF6.Tools" Version="1.1.4" PrivateAssets="All" />
     <DotNetCliToolReference Include="Migrator.EF6.Tools" Version="1.1.4" />
   </ItemGroup>

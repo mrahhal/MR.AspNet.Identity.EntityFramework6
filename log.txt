@@ -1,0 +1,43 @@
+2021-03-29 16:04:36.526 +01:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-29 16:04:36.559 +01:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-29 16:04:38.562 +01:00 [INF] Initializing upgrade step Select an entrypoint
+2021-03-29 16:04:38.568 +01:00 [INF] Setting entrypoint to only project in solution: D:\Bluestone\MR.AspNet.Identity.EntityFramework6\src\MR.AspNet.Identity.EntityFramework6\MR.AspNet.Identity.EntityFramework6.csproj
+2021-03-29 16:04:38.839 +01:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-29 16:04:38.864 +01:00 [INF] Initializing upgrade step Back up project
+2021-03-29 16:04:42.844 +01:00 [INF] Skipping upgrade step Back up project
+2021-03-29 16:04:42.846 +01:00 [INF] Upgrade step Back up project skipped
+2021-03-29 16:04:45.122 +01:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-29 16:04:45.124 +01:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-03-29 16:04:47.020 +01:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.217201) needs added
+2021-03-29 16:04:47.026 +01:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-03-29 16:04:53.692 +01:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-03-29 16:04:53.702 +01:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.217201
+2021-03-29 16:04:55.652 +01:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-03-29 16:05:00.201 +01:00 [INF] Initializing upgrade step Update TFM
+2021-03-29 16:05:00.207 +01:00 [INF] TFM needs updated to netstandard2.0
+2021-03-29 16:05:03.101 +01:00 [INF] Applying upgrade step Update TFM
+2021-03-29 16:05:04.884 +01:00 [INF] Updated TFM to netstandard2.0
+2021-03-29 16:05:04.886 +01:00 [INF] Upgrade step Update TFM applied successfully
+2021-03-29 16:05:32.953 +01:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-03-29 16:05:35.839 +01:00 [INF] Marking package EntityFramework, Version=6.1.3 for removal because it doesn't support the target framework but a newer version (6.4.4) does
+2021-03-29 16:05:35.843 +01:00 [INF] Packages to be removed:
+EntityFramework, Version=6.1.3
+2021-03-29 16:05:35.844 +01:00 [INF] Packages to be addded:
+EntityFramework, Version=6.4.4
+2021-03-29 16:05:46.838 +01:00 [INF] Applying upgrade step Update NuGet Packages
+2021-03-29 16:05:46.842 +01:00 [INF] Removing outdated package reference: EntityFramework, Version=6.1.3
+2021-03-29 16:05:46.845 +01:00 [INF] Adding package reference: EntityFramework, Version=6.4.4
+2021-03-29 16:05:49.280 +01:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-03-29 16:05:52.590 +01:00 [INF] Initializing upgrade step Add template files
+2021-03-29 16:05:52.636 +01:00 [INF] 0 expected template items needed
+2021-03-29 16:05:52.638 +01:00 [INF] Initializing upgrade step Update C# source
+2021-03-29 16:05:54.621 +01:00 [INF] Initializing upgrade step Move to next project
+2021-03-29 16:05:54.765 +01:00 [INF] Applying upgrade step Move to next project
+2021-03-29 16:05:54.766 +01:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-29 16:06:01.276 +01:00 [INF] Initializing upgrade step Finalize upgrade
+2021-03-29 16:06:02.228 +01:00 [INF] Applying upgrade step Finalize upgrade
+2021-03-29 16:06:02.230 +01:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-03-29 16:06:04.385 +01:00 [INF] Upgrade has completed. Please review any changes.
+2021-03-29 16:06:04.388 +01:00 [INF] Saving upgrade progress file at D:\Bluestone\MR.AspNet.Identity.EntityFramework6\.upgrade-assistant
